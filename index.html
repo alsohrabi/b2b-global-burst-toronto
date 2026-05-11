@@ -843,6 +843,81 @@
   .hack-theme h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
   .hack-theme p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
 
+  /* ── Slide: Hackathon Teams ── */
+  .slide-teams { background: var(--bg-dark); text-align: center; }
+
+  .teams-title {
+    font-size: clamp(32px, 4.5vw, 48px);
+    font-weight: 800;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #9c6ade, #5c6ac4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .teams-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 960px;
+  }
+
+  .team-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 28px 24px;
+    flex: 1;
+    min-width: 260px;
+    max-width: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .team-card.team-1::before { background: var(--gradient-1); }
+  .team-card.team-2::before { background: var(--gradient-2); }
+  .team-card.team-3::before { background: linear-gradient(135deg, #ff6b6b, #ffa502); }
+
+  .team-card-header {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .team-card-header .team-icon { font-size: 28px; margin-bottom: 8px; }
+  .team-card-header h3 { font-size: 15px; font-weight: 700; }
+
+  .team-card.team-1 .team-card-header h3 { color: var(--shopify-light); }
+  .team-card.team-2 .team-card-header h3 { color: #8b9cf7; }
+  .team-card.team-3 .team-card-header h3 { color: #ffa502; }
+
+  .team-card-header p { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+
+  .team-members {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .team-member {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .team-member:last-child { border-bottom: none; }
+
   /* ── Slide: Past Events ── */
   .slide-events { background: var(--bg-dark); }
 
@@ -1589,11 +1664,73 @@
   </div>
 </div>
 
+<!-- ═══════════════════ SLIDE 11: HACKATHON TEAMS ═══════════════════ -->
+<div class="slide slide-teams" data-slide="10">
+  <div class="glow glow-purple" style="top: -150px; left: -100px;"></div>
+  <div class="glow glow-green" style="bottom: -200px; right: -100px;"></div>
+  <div class="content-z">
+    <div class="hack-badge">Teams</div>
+    <div class="teams-title">Hackathon Teams</div>
+    <div class="teams-grid">
+
+      <div class="team-card team-1">
+        <div class="team-card-header">
+          <div class="team-icon">🔧</div>
+          <h3>Operational Challenges</h3>
+          <p>What happens when&hellip;</p>
+        </div>
+        <div class="team-members">
+          <div class="team-member">Kai Morton</div>
+          <div class="team-member">Mercedes Boykin-Sabalones</div>
+          <div class="team-member">Sam Anderson</div>
+          <div class="team-member">Chris Dempsey</div>
+          <div class="team-member">Adrienne Borges</div>
+          <div class="team-member">Luis Romero</div>
+          <div class="team-member">Gareth Cowan</div>
+        </div>
+      </div>
+
+      <div class="team-card team-2">
+        <div class="team-card-header">
+          <div class="team-icon">⏱️</div>
+          <h3>What's Eating Your Time?</h3>
+          <p>Account planning, research &amp; more</p>
+        </div>
+        <div class="team-members">
+          <div class="team-member">Kelly Miles</div>
+          <div class="team-member">Jordan Yeats</div>
+          <div class="team-member">Andy Bluestein</div>
+          <div class="team-member">Thomas Gilliatt</div>
+          <div class="team-member">Varisha Memon</div>
+          <div class="team-member">Cooper VandeWalle</div>
+        </div>
+      </div>
+
+      <div class="team-card team-3">
+        <div class="team-card-header">
+          <div class="team-icon">🎯</div>
+          <h3>Effective Deal Cycles</h3>
+          <p>Accelerate the pipeline</p>
+        </div>
+        <div class="team-members">
+          <div class="team-member">Zach Francque</div>
+          <div class="team-member">Austin Sonnen-Coote</div>
+          <div class="team-member">Jenny Bruns</div>
+          <div class="team-member">Julie Marcott</div>
+          <div class="team-member">Richard Zhao</div>
+          <div class="team-member">Alwyn Sun</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
 <nav class="nav">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">←</button>
   <div class="nav-dots" id="navDots"></div>
-  <span class="slide-counter" id="slideCounter">1 / 10</span>
+  <span class="slide-counter" id="slideCounter">1 / 11</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">→</button>
 </nav>
 
