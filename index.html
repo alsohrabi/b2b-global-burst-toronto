@@ -753,6 +753,96 @@
     max-width: 150px;
   }
 
+  /* ── Slide: AI Hackathon ── */
+  .slide-hackathon { background: var(--bg-dark); text-align: center; }
+
+  .hack-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(156,106,222,0.15);
+    border: 1px solid rgba(156,106,222,0.3);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #c49cff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .hack-title {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    margin-bottom: 32px;
+    background: linear-gradient(135deg, #9c6ade, #5c6ac4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hack-info {
+    max-width: 700px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+  }
+
+  .hack-info .highlight {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .hack-themes {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+  }
+
+  .hack-theme {
+    background: var(--bg-card);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 28px 24px;
+    flex: 1;
+    min-width: 240px;
+    max-width: 280px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .hack-theme:hover {
+    transform: translateY(-4px);
+    border-color: rgba(156,106,222,0.3);
+    box-shadow: 0 8px 32px rgba(156,106,222,0.1);
+  }
+
+  .hack-theme::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #9c6ade, #5c6ac4);
+  }
+
+  .hack-theme-num {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c49cff;
+    margin-bottom: 10px;
+  }
+
+  .hack-theme-icon { font-size: 32px; margin-bottom: 12px; }
+  .hack-theme h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .hack-theme p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
   /* ── Slide: Past Events ── */
   .slide-events { background: var(--bg-dark); }
 
@@ -1466,11 +1556,44 @@
   </div>
 </div>
 
+<!-- ═══════════════════ SLIDE 10: AI HACKATHON ═══════════════════ -->
+<div class="slide slide-hackathon" data-slide="9">
+  <div class="glow glow-purple" style="top: -100px; left: -100px;"></div>
+  <div class="glow glow-green" style="bottom: -200px; right: -100px;"></div>
+  <div class="content-z">
+    <div class="hack-badge">Hands-On</div>
+    <div class="hack-title">AI Hackathon</div>
+    <div class="hack-info">
+      <span class="highlight">Three teams, three themes.</span> You'll have <span class="highlight">1 hour and 15 minutes</span> to create something &mdash; most of you already have something started. Use this session to collaborate, share ideas, and build something that can be shared across the org. Each team gets <span class="highlight">15 minutes to present</span> their creation.
+    </div>
+    <div class="hack-themes">
+      <div class="hack-theme">
+        <div class="hack-theme-num">Theme 1</div>
+        <div class="hack-theme-icon">🔧</div>
+        <h4>Operational Challenges</h4>
+        <p>What happens when&hellip; Solve the friction in day-to-day workflows</p>
+      </div>
+      <div class="hack-theme">
+        <div class="hack-theme-num">Theme 2</div>
+        <div class="hack-theme-icon">⏱️</div>
+        <h4>What's Eating Your Time?</h4>
+        <p>Account planning, contact research &amp; the tasks that slow you down</p>
+      </div>
+      <div class="hack-theme">
+        <div class="hack-theme-num">Theme 3</div>
+        <div class="hack-theme-icon">🎯</div>
+        <h4>Effective Deal Cycles</h4>
+        <p>Accelerate &amp; optimize how deals move through the pipeline</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
 <nav class="nav">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">←</button>
   <div class="nav-dots" id="navDots"></div>
-  <span class="slide-counter" id="slideCounter">1 / 9</span>
+  <span class="slide-counter" id="slideCounter">1 / 10</span>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">→</button>
 </nav>
 
